@@ -15,8 +15,6 @@ enum class CurrentCountryStatus { DONE, LOADING, ERROR }
 
 class StatsViewModel(app: Application) : AndroidViewModel(app) {
 
-    private val TAG = "StatsViewModel"
-
     private val databaseCountry = getInstanceCountry(app.applicationContext)
     private val databaseCovidTotal = getInstanceCovidTotal(app.applicationContext)
     private val repository = CountriesRepository(databaseCountry, databaseCovidTotal)
@@ -62,3 +60,5 @@ class StatsViewModelFactory(private val app: Application) : ViewModelProvider.Fa
         throw Exception("Cannot find view model class")
     }
 }
+
+private const val TAG = "StatsViewModel"

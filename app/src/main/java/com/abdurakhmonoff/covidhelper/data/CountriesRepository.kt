@@ -19,8 +19,6 @@ class CountriesRepository(
     private val databaseCovidTotal: CovidTotalDatabase
 ) {
 
-    private val TAG = "CountriesRepository"
-
     val allCountries: LiveData<List<Country>> =
         Transformations.map(databaseCountry.countryDao.getAllCountries()) {
             it?.asDomainModel()
@@ -45,3 +43,5 @@ class CountriesRepository(
     }
 
 }
+
+private const val TAG = "CountriesRepository"

@@ -2,7 +2,9 @@ package com.abdurakhmonoff.covidhelper.ui.main
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -10,11 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.abdurakhmonoff.covidhelper.R
 import com.abdurakhmonoff.covidhelper.databinding.FragmentMainBinding
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by lazy {

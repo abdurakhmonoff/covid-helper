@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/motion_layout"
         android:layout_width="match_parent"
@@ -21,8 +22,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                app:layoutDescription="@xml/fragment_info_scene"
-                android:background="#D9000000">
+                android:background="#D9000000"
+                app:layoutDescription="@xml/fragment_info_scene">
 
                 <TextView
                     android:id="@+id/frequently_asked_questions_text"
@@ -39,9 +40,9 @@
 
         <ExpandableListView
             android:id="@+id/questions_list"
-            android:dividerHeight="1dp"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:dividerHeight="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

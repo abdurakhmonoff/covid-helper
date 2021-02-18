@@ -1,7 +1,6 @@
 package com.abdurakhmonoff.covidhelper.models.datatransferobjects
 
 import com.abdurakhmonoff.covidhelper.models.databaseentities.CovidTotalDb
-import com.abdurakhmonoff.covidhelper.models.domainmodels.CovidTotal
 
 data class CovidTotalDTO(
     val active: Int,
@@ -28,5 +27,10 @@ data class CovidTotalDTO(
 )
 
 fun CovidTotalDTO.asDbModel(): CovidTotalDb {
-    return CovidTotalDb(cases = this.cases,recovered = this.recovered,death = this.deaths,update = this.updated)
+    return CovidTotalDb(
+        cases = this.cases,
+        recovered = this.recovered,
+        death = this.deaths,
+        update = this.updated
+    )
 }

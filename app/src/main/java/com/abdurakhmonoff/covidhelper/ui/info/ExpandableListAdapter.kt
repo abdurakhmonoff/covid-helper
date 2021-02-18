@@ -1,5 +1,6 @@
 package com.abdurakhmonoff.covidhelper.ui.info
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,12 @@ import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
 import com.abdurakhmonoff.covidhelper.R
-import kotlin.math.sign
 
-class ExpandableListAdapter(private val context: Context, private val titleList:List<String>, private val dataList:HashMap<String,String>):BaseExpandableListAdapter() {
+class ExpandableListAdapter(
+    private val context: Context,
+    private val titleList: List<String>,
+    private val dataList: HashMap<String, String>
+) : BaseExpandableListAdapter() {
     override fun getGroupCount(): Int = titleList.size
 
     override fun getChildrenCount(groupPosition: Int): Int = 1
@@ -36,15 +40,16 @@ class ExpandableListAdapter(private val context: Context, private val titleList:
         convertView: View?,
         parent: ViewGroup?
     ): View? {
-        var convertView = convertView
+        var view = convertView
         val listTitle = getGroup(groupPosition)
-        if (convertView==null){
-            val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = layoutInflater.inflate(R.layout.expandable_list_group,null)
+        if (view == null) {
+            val layoutInflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            view = layoutInflater.inflate(R.layout.expandable_list_group, null)
         }
-        val title = convertView?.findViewById<TextView>(R.id.tv_title)
+        val title = view?.findViewById<TextView>(R.id.tv_title)
         title?.text = listTitle
-        return convertView
+        return view
     }
 
     override fun getChildView(
@@ -54,15 +59,16 @@ class ExpandableListAdapter(private val context: Context, private val titleList:
         convertView: View?,
         parent: ViewGroup?
     ): View? {
-        var convertView = convertView
-        val listTitle = getChild(groupPosition,childPosition)
-        if (convertView==null){
-            val layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            convertView = layoutInflater.inflate(R.layout.expandable_list_item,null)
+        var view = convertView
+        val listTitle = getChild(groupPosition, childPosition)
+        if (view == null) {
+            val layoutInflater =
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            view = layoutInflater.inflate(R.layout.expandable_list_item, null)
         }
-        val title = convertView?.findViewById<TextView>(R.id.tv_item)
+        val title = view?.findViewById<TextView>(R.id.tv_item)
         title?.text = listTitle
-        return convertView
+        return view
     }
 
     override fun isChildSelectable(groupPosition: Int, childPosition: Int): Boolean {
