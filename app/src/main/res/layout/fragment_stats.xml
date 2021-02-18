@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.abdurakhmonoff.covidhelper.ui.stats.StatsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/recycler_container"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/countries_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/stats_list_item"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:paddingBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:countryList="@{viewModel.countries}"
+            tools:context=".ui.stats.StatsFragment" />
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:progressStatus="@{viewModel.statusCurrent}"/>
+    </RelativeLayout>
+</layout>

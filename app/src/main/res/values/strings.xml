@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Covid Helper</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="total_cases_two_dot">Total cases:</string>
+    <string name="deaths_two_dot">Deaths:</string>
+    <string name="covid_19">Covid-19</string>
+    <string name="recovered">Recovered:</string>
+    <string name="view_covid_stats_text">View Covid-19 statistics in all countries</string>
+    <string name="learn_covid_symptoms_text">Learn about coronavirus symptoms</string>
+    <string name="home">Home</string>
+    <string name="statistics">Statistics</string>
+    <string name="info">Info</string>
+    <string name="learn_more_about_covid">Learn more about Covid-19</string>
+    <string name="frequently_asked_questions">Frequently asked questions</string>
+    <string name="subscribe_to_notifications">Subscribe to Notifications</string>
+    <string name="notification_question_channel_id">Questions</string>
+    <string name="notification_description">Frequently asked questions</string>
+    <string name="notification_downloaded_channel_id">Questions</string>
+    <string name="notification_title">Frequently Asked Questions</string>
+    <string name="about">About</string>
+    <string name="get_current_location_s_stats">Get current location\'s stats</string>
+    <string name="failed_to_load_data">Failed to load data</string>
+    <string name="try_again">Try again</string>
+    <string name="location_required_error">Location services must be enabled to use the app</string>
+</resources>
